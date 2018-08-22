@@ -1,0 +1,20 @@
+{
+  "name": "BTD highlight",
+  "version": "1.0",
+  "description": "Improves BTD UI",
+  "manifest_version": 2,
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.bitcointrade.com.br/*"],
+      "run_at": "document_end",
+      "js": ["vendor/jquery-3.3.1.min.js", "contentScript.js"]
+    }
+  ]
+}
